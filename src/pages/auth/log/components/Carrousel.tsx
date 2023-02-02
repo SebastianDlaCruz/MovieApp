@@ -8,7 +8,7 @@ type Props = {
 	images: any[];
 };
 
-const Carrusel = ({ images }: Props) => {
+const Carrousel = ({ images }: Props) => {
 	const [activeElement, setActiveElement] = useState(0);
 
 	const moveImageRight = () => {
@@ -53,4 +53,4 @@ const Carrusel = ({ images }: Props) => {
 	);
 };
 
-export default Carrusel;
+export default Carrousel;

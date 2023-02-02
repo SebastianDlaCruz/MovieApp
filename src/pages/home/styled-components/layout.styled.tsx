@@ -1,5 +1,11 @@
+import { Visibility } from "@styled/layout/layout.styled";
 import styled from "styled-components";
-import { PropsButtonNotification, PropsCheckbox, PropsLi } from "./types/type";
+import {
+	PropButtonProfile,
+	PropsButtonNotification,
+	PropsCheckbox,
+	PropsLi,
+} from "./types/type";
 export const HomeStyled = styled.div`
     display: flex;
     min-block-size: 100vh;
@@ -393,5 +399,39 @@ export const ItemMenu = styled.a`
         }
     }
 
+
+`;
+
+export const ButtonUserProfileStyled = styled.button<PropButtonProfile>`
+    
+    block-size: 70px;
+    inline-size: 70px;
+    background-image: url(${({ img }) => img});
+    background-repeat: no-repeat;
+    background-size: cover;
+             
+
+`;
+
+export const ProfileInformationStyled = styled.div`
+  position: absolute;
+  inset-block-start: 1%;
+  inset-inline-end: 8%; 
+  display: grid;
+  place-items: center;
+  align-content: center;
+  block-size: 300px;
+  inline-size: 300px; 
+  border-radius: 9px;
+  background-color: var(--color-aside-menu);
+  ${Visibility}
+  z-index: 3;
+
+  
+    ul li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
 `;

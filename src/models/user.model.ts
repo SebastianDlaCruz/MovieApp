@@ -5,7 +5,6 @@ interface user {
 	photoUrl: string;
 	uid: string;
 	idSession: string;
-	status: string;
 }
 
 export default user;

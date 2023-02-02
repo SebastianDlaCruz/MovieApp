@@ -1,15 +1,26 @@
+import { useStateRedux } from "@rdx/hook/useStateRedux";
 import {
 	ButtonNotificationStyled,
+	ButtonUserProfileStyled,
 	Container,
 } from "../styled-components/layout.styled";
 import notification from "/icons/Notification.svg";
-import avatar from "/img/avatar.png";
+import avatar from "/icons/avatar.svg";
 
-function ContainerHeader() {
+type props = {
+	handleClick: () => void;
+};
+
+function ContainerHeader({ handleClick }: props) {
+	const user = useStateRedux((state) => state.user);
+
 	return (
 		<Container>
 			<ButtonNotificationStyled img={notification} />
-			<img src={avatar} alt="avatar" />
+			<ButtonUserProfileStyled
+				img={user.photoUrl || avatar}
+				onClick={handleClick}
+			/>
 		</Container>
 	);
 }

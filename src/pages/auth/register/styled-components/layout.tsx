@@ -151,19 +151,4 @@ export const ImagStyled = styled.img<ImgType>`
 
 `;
 
-export const ContainerButtonGoogleStyled = styled.legend`
-    
-    display : grid;
-    place-items: center;
 
-    div{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        inline-size: 250px;
-        hr{
-
-            inline-size: 35%;
-        }
-    }
-`;

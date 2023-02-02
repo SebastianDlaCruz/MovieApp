@@ -16,6 +16,7 @@ export const createUserWithEAP = async (
 		updateProfileUser(res, displayName, "");
 		if (!res) throw new Error(res);
 		const { uid } = res.user;
+
 		return {
 			ok: true,
 			displayName,
@@ -24,6 +25,7 @@ export const createUserWithEAP = async (
 			uid,
 		};
 	} catch (error) {
+        
 		const statusError = error;
 		return {
 			ok: false,

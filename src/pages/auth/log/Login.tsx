@@ -46,8 +46,10 @@ const Login = () => {
 		confirmForm();
 		if (!response) {
 			dispatch(startSessionEAP(form));
+			navigate("/", { replace: true });
 		}
 	};
+
 	return (
 		<ContainerForm>
 			<SectionForm flex="1">

@@ -11,3 +11,11 @@ export type PropsLi = {
 	isaActive: number;
 	img: string;
 };
+
+export type PropButtonProfile = {
+	img: string;
+};
+
+export type PropProfile = {
+	isActive: boolean;
+};

@@ -1,22 +1,17 @@
-import { FirebaseGetAuth } from "@fireBS/config";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "@rdx/store";
+import { getUser } from "@rdx/thunk/getUser.thunk";
+import { useDispatch } from "react-redux";
 import AsideMenu from "./components/AsideMenu";
 import ContainerContent from "./components/ContainerContent";
+import useRedirect from "./hook/useRedirect.hook";
 import { HomeStyled } from "./styled-components/layout.styled";
 
 const Home = () => {
-	const navigate = useNavigate();
-	useEffect(() => {
-		const auth = FirebaseGetAuth;
-		const user = auth.currentUser;
-		if (!user) {
-			return navigate("/login");
-		} else {
-			const id = user.uid;
-			return navigate("/", { replace: true });
-		}
-	}, []);
+	const dispatch = useDispatch<AppDispatch>();
+	const { uid } = useRedirect();
+	if (uid !== "") {
+		dispatch(getUser(uid));
+	}
 
 	return (
 		<HomeStyled>
